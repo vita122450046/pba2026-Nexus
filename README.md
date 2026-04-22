@@ -1,12 +1,17 @@
 # pba2026-Nexus
-
-Proyek analisis sentimen tweet berbasis **Machine Learning** dan **Deep Learning** dengan antarmuka **Streamlit**.  
-Repository ini mencakup alur lengkap dari preprocessing data, training model, evaluasi, hingga deployment demo ke Hugging Face Spaces.
-
 ## 👥 Anggota Kelompok
 - Vita Anggraini (122450046)
 - Cintya Bella (122450066)
 - Bastian (122450130)
+Proyek analisis sentimen tweet berbasis **Machine Learning** dan **Deep Learning** dengan antarmuka **Streamlit**.  
+Repository ini mencakup alur lengkap dari preprocessing data, training model, evaluasi, hingga deployment demo ke Hugging Face Spaces.
+
+Penelitian ini bertujuan untuk:
+1. Membangun model klasifikasi sentimen menggunakan machine learning dan deep learning
+2. Membandingkan performa logistic regression dan bilstm
+3. Mengimplementasikan model dalam bentuk aplikasi interaktif
+
+
 
 ## 🔗 Tautan Penting
 - Dataset: [Sentiment140 (Kaggle)](https://www.kaggle.com/datasets/kazanova/sentiment140)
@@ -192,6 +197,12 @@ History per-epoch tersedia di:
 python scripts/train_bilstm.py --epochs 6 --batch-size 64 --run-name bilstm_sentiment_v1
 ```
 
+### Analisis Training
+Kurva training menunjukkan:
+-Training loss terus menurun
+-Validation loss sedikit lebih tinggi dari training loss
+-Hal ini mengindikasikan adanya overfitting ringan
+
 ### Evaluasi BiLSTM
 ```bash
 python scripts/eval_bilstm.py --output-json models/dl/eval_metrics.json
@@ -210,6 +221,15 @@ python scripts/eval_bilstm.py --output-json models/dl/eval_metrics.json
 - Link: [HF Space DL](https://huggingface.co/spaces/cintyabella28/pba2026-nexus-sentiment-dl)
 
 ---
+
+## Preprocessing Data
+-Case folding (lowercase)
+-Cleaning (menghapus simbol dan karakter khusus)
+-Tokenization
+-Padding dan truncation hingga panjang maksimum 50
+-Pembuatan vocabulary
+
+
 
 ## 📝 Catatan
 
